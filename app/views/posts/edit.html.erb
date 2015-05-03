@@ -1,6 +1,9 @@
-<h1>Editing post</h1>
+<h1>Edit Post</h1>
+
+<div>
+  <%= link_to 'Back', posts_path, class: 'btn btn-default' %>
+</div>
+
+<br>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
