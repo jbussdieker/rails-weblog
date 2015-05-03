@@ -1,11 +1,19 @@
 <h1>Posts</h1>
 
-<%= link_to 'New Post', new_post_path %>
+<div>
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
+</div>
 
-<% @posts.each do |post| %>
-  <div>
-    <p title="<%= post.created_at %>"><%= time_ago_in_words(post.created_at) %> ago</p>
-    <p><%= link_to 'Edit', edit_post_path(post) %></p>
-    <p><%= post.body %></p>
-  </div>
-<% end %>
+<br>
+
+<div>
+  <% @posts.each do |post| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span title="<%= post.created_at %>">Posted <%= time_ago_in_words(post.created_at) %> ago</span>
+        <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-default btn-xs pull-right' %>
+      </div>
+      <div class="panel-body"><%= post.body %></div>
+    </div>
+  <% end %>
+</div>
