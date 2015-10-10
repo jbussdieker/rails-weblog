@@ -13,7 +13,7 @@
         <span title="<%= post.created_at %>">Posted <%= time_ago_in_words(post.created_at) %> ago</span>
         <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-default btn-xs pull-right' %>
       </div>
-      <div class="panel-body"><%= post.body %></div>
+      <div class="panel-body"><%= markdown(post.body) %></div>
     </div>
   <% end %>
 </div>
